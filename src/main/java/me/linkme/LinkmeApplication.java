@@ -21,9 +21,9 @@ public class LinkmeApplication {
     JedisConnectionFactory jedisConnectionFactory() {
         JedisConnectionFactory jedisConFactory
                 = new JedisConnectionFactory();
-        jedisConFactory.setHostName("localhost");
-        jedisConFactory.setPort(32768);
-        jedisConFactory.setPassword("redispw");
+        jedisConFactory.setHostName("redis-19674.c243.eu-west-1-3.ec2.cloud.redislabs.com");
+        jedisConFactory.setPort(19674);
+        jedisConFactory.setPassword("1VJ8f60qSoESFuPxOsarxN3wXxEGj29B");
         return jedisConFactory;
     }
 
