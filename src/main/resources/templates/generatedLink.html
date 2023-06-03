@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <th:block th:insert="~{fragments/head.html}"></th:block>
+    <style>
+        body {
+            background-image: url("/images/Background.svg");
+            background-size: cover;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .card{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            color: white;
+            border: 1px solid white;
+            background-color: transparent;
+            width: 800px;
+            padding: 5px 10px;
+        }
+        .card p {
+            margin-bottom: 0;
+            font-size: 22px;
+        }
+        .copy {
+            background-color: #DB7C26;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            align-self: end;
+            margin-bottom: 5px;
+        }
+        @media only screen and (max-width: 800px){
+           .card{
+               width: 100%;
+           }
+        }
+    </style>
+</head>
+<body>
+    <nav th:replace="fragments/navbar :: navbar(user=${user})"></nav>
+    <div class="container main">
+        <img src="/icons/logo.png" width="128px" class="mb-4">
+        <div class="card my-3">
+            <div>
+                <p>Code for Downloader App</p>
+                <h2 th:text="${link.shortener}" class="display-4"></h2>
+                <a th:href="${link.shortener}"></a>
+            </div>
+            <div class="copy" onclick="copyToClipBoard(event)" role="button">
+               <img src="/icons/copy.png" width="30px">
+            </div>
+        </div>
+        <div class="card my-3">
+            <div>
+                <p>Short URL</p>
+                <a th:href="${url}" target="_blank"><p th:text="${url}" th:remove="tag"></p></a>
+            </div>
+            <div class="copy" onclick="copyToClipBoard(event)" role="button">
+                <img src="/icons/copy.png" width="30px">
+            </div>
+        </div>
+        <div class="card my-3">
+            <div>
+                <p>Destination URL</p>
+                <a th:href="${link.url}" target="_blank"><p th:text="${link.url}" th:remove="tag"></p></a>
+            </div>
+            <div class="copy" onclick="copyToClipBoard(event)" role="button">
+                <img src="/icons/copy.png" width="30px">
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="fragments/loginModal"></div>
+    <script>
+        function copyToClipBoard(event){
+            let link = event.target.parentElement.parentElement.querySelector('a').getAttribute('href');
+            navigator.clipboard.writeText(link);
+        }
+    </script>
+</body>
+</html>

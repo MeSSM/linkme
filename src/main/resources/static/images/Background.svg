@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Background);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #db7c26;
+      }
+
+      .cls-4 {
+        fill: #124ab9;
+      }
+
+      .cls-5 {
+        fill: #00152c;
+      }
+    </style>
+    <clipPath id="clip-Background">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Background" class="cls-1">
+    <rect class="cls-5" width="1920" height="1080"/>
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-2" cx="10" cy="10" r="10" transform="translate(637 859)"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" class="cls-2" cx="10" cy="10" r="10" transform="translate(1645 815)"/>
+    <circle id="Ellipse_3" data-name="Ellipse 3" class="cls-2" cx="10" cy="10" r="10" transform="translate(1692 214)"/>
+    <circle id="Ellipse_4" data-name="Ellipse 4" class="cls-3" cx="10" cy="10" r="10" transform="translate(1838 497)"/>
+    <circle id="Ellipse_5" data-name="Ellipse 5" class="cls-3" cx="10" cy="10" r="10" transform="translate(82 752)"/>
+    <circle id="Ellipse_6" data-name="Ellipse 6" class="cls-3" cx="10" cy="10" r="10" transform="translate(205 189)"/>
+    <circle id="Ellipse_7" data-name="Ellipse 7" class="cls-4" cx="10" cy="10" r="10" transform="translate(57 383)"/>
+    <circle id="Ellipse_8" data-name="Ellipse 8" class="cls-4" cx="10" cy="10" r="10" transform="translate(1530 609)"/>
+    <circle id="Ellipse_9" data-name="Ellipse 9" class="cls-4" cx="10" cy="10" r="10" transform="translate(960 111)"/>
+  </g>
+</svg>

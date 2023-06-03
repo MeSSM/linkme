@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <th:block th:insert="~{fragments/head.html}"></th:block>
+    <link rel="stylesheet" th:href="@{styles/index.css}">
+</head>
+<body>
+    <nav th:insert="fragments/navbar :: navbar(user=${user})"></nav>
+
+    <div class="container main mb-5">
+        <img th:src="@{/icons/logo.png}" width="128px" class="mb-4">
+        <h1 class="display-2 text-center w-75 fw-normal">
+            Shorten <span style="color: #DB7C26;">Links</span> for the Downloader App
+        </h1>
+        <p class="text-center" style="color: rgba(255,255,255,0.75)">
+            You can Download <a href="#" style="color: #DB7C26">Our App</a>  for FREE to access your Link securely !
+        </p>
+        <form class="w-100 d-flex justify-content-center mt-5" action="/shorten-link" method="POST">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            <input type="text" name="url" class="form-control w-50 url rounded-5" placeholder="Enter URL To shorten..." />
+            <input type="submit" class="btn mx-4 submit rounded-5" value="Shorten">
+        </form>
+
+        <th:block th:if="${generated_link}">
+            <p th:text="${generated_link.shortener}"></p>
+        </th:block>
+
+
+    </div>
+
+    <div th:replace="fragments/loginModal"></div>
+    <div th:replace="fragments/registerModal"></div>
+
+
+    <div class="toaster">
+        <div th:if="${success}" class="alert alert-success d-flex align-items-center" role="alert">
+            <img class="me-2" th:src="@{/icons/checked.png}" width="30px">
+            <div>
+                User <strong th:text="${success}"></strong> Created Successfully !
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div th:if="${user_exists}" class="alert alert-danger d-flex align-items-center" role="alert">
+            <img class="me-2" th:src="@{/icons/cross.png}" width="30px">
+            <div>
+                User with email <strong th:text="${user_exists}"></strong> already exists !
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div th:if="${param.wrong_link}" class="alert alert-danger d-flex align-items-center" role="alert">
+            <img class="me-2" th:src="@{/icons/cross.png}" width="30px">
+            <div>
+                <strong th:text="${param.wrong_link}"></strong> is invalid !
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+
+
+
+    <script th:replace="fragments/validation"></script>
+</body>
+</html>

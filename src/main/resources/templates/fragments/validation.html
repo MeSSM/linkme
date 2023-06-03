@@ -1,0 +1,10 @@
+<script>
+    document.addEventListener("DOMContentLoaded", ()=>{
+        if(window.location.search.endsWith("error")){
+            new bootstrap.Modal(document.querySelector("#loginModal")).show()
+            document.querySelector(".wrong-credential").classList.remove('d-none')
+        }else if (window.location.pathname.endsWith("/register")){
+            new bootstrap.Modal(document.querySelector("#registerModal")).show()
+        }
+    })
+</script>
