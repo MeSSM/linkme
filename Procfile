@@ -1,1 +1,1 @@
-web: java -Dserver.port=80 -jar target/linkme.war
+web: java -Dserver.port=$PORT -jar target/linkme.war
